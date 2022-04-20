@@ -1,6 +1,6 @@
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Home from "../home/Home";
 import Hotels from "../hotels/Hotels";
@@ -33,12 +33,12 @@ function Layout() {
        </Navbar.Collapse>
       </Navbar>
       <Container>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/hotels" element={<Hotels />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/admin" element={<Admin />} />
-        </Routes>
+      <Switch>
+     <Route path="/" exact component={Home} />
+     <Route path="/hotels" component={Hotels} />
+     <Route path="/contact" component={Contact} />
+     <Route path="/admin" component={Admin} />
+    </Switch>
     
       </Container>
      </Router>
