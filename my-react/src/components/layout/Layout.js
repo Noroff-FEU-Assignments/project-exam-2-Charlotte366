@@ -6,6 +6,7 @@ import Home from "../home/Home";
 import Hotels from "../hotels/Hotels";
 import Contact from "../contact/Contact";
 import Admin  from "../admin/Admin";
+import HotelSpecific  from "../hotelspecific/HotelSpecific";
 
 function Layout() {
     return (
