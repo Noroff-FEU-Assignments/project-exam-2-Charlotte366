@@ -2,10 +2,10 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
 import Container from "react-bootstrap/Container";
-import Home from "../home/Home";
-import Hotels from "../hotels/Hotels";
-import Contact from "../contact/Contact";
-import Admin  from "../admin/Admin";
+import Home from "../customerpages/home/Home";
+import Hotels from "../customerpages/hotels/Hotels";
+import Contact from "../customerpages/contact/Contact";
+import Admin  from "../adminpages/admin/Admin";
 import HotelSpecific  from "../hotelspecific/HotelSpecific";
 
 function Layout() {
@@ -39,6 +39,7 @@ function Layout() {
      <Route path="/hotels" component={Hotels} />
      <Route path="/contact" component={Contact} />
      <Route path="/admin" component={Admin} />
+     <Route path="/hotelspecific" component={HotelSpecific} />
     </Switch>
     
       </Container>
