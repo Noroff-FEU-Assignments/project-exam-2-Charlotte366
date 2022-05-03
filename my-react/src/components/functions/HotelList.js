@@ -55,15 +55,23 @@ function HotelList() {
   {Array.from({ length: 1 }).map((_, idx) => (
     <Col>
       <Card>
-        
+      <Link to={`hotelspecific/${hotel.id}`}>
         <Card.Body>
-        <Card.Title> <Link to={`hotelspecific/${hotel.id}`}>
+      
+
+
+        <Card.Title> 
                    <h2>{hotel.attributes.name}</h2>
-                   </Link></Card.Title>
+                   </Card.Title>
           <Card.Text>
-          {hotel.attributes.description}
+            <p>Centrum is {hotel.attributes.centrumdistance} km away.</p>
+            <p>Bergen airport is {hotel.attributes.airportdistance} km away </p>
+        
+        
           </Card.Text>
+        
         </Card.Body>
+        </Link>
       </Card>
     </Col>
   ))}
