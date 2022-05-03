@@ -3,7 +3,7 @@ import { API_HOTELS } from "../../constants/api";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import "../../App.css";
+import "../../App.scss";
 import { Link } from "react-router-dom";
 
 
