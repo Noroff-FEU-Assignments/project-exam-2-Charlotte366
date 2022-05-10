@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { API_HOTELS } from "../../constants/api";
+import { API_HOTELS_POPULATE } from "../../constants/api";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -13,11 +13,10 @@ function HotelList() {
  const [error, setError] = useState(null);
 
 
-
  useEffect(function () {
   async function fetchData() {
    try {
-    const response = await fetch(API_HOTELS);
+    const response = await fetch(API_HOTELS_POPULATE);
 
     if (response.ok) {
      const json = await response.json();
@@ -56,17 +55,15 @@ function HotelList() {
     <Col>
       <Card>
       <Link to={`hotelspecific/${hotel.id}`}>
-        <Card.Body>
-      
-
-
+        <Card.Body >
+        <Card.Img variant="left" src={hotel.attributes.mainimage.data.attributes.formats.small.url} />
         <Card.Title> 
                    <h2>{hotel.attributes.name}</h2>
                    </Card.Title>
           <Card.Text>
-            <p>Centrum is {hotel.attributes.centrumdistance} km away.</p>
-            <p>Bergen airport is {hotel.attributes.airportdistance} km away </p>
-        
+           <p> {hotel.attributes.price} kr </p>
+           <p> Centrum is {hotel.attributes.centrumdistance} km away.</p>
+           <p> Bergen airport is {hotel.attributes.airportdistance} km away </p>
         
           </Card.Text>
         
