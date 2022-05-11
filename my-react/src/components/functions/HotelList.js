@@ -3,6 +3,7 @@ import { API_HOTELS_POPULATE } from "../../constants/api";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/button";
 import "../../App.scss";
 import { Link } from "react-router-dom";
 
@@ -56,12 +57,13 @@ function HotelList() {
       <Card>
       <Link to={`hotelspecific/${hotel.id}`}>
         <Card.Body >
-        <Card.Img variant="left" src={hotel.attributes.mainimage.data.attributes.formats.small.url} />
+        <Card.Img variant="left" src={hotel.attributes.mainimage.data.attributes.formats.small.url} width="300px" height="200px" />
         <Card.Title> 
                    <h2>{hotel.attributes.name}</h2>
                    </Card.Title>
           <Card.Text>
            <p> {hotel.attributes.price} kr </p>
+           <Button variant="primary">ORDER NOW</Button>{' '}
            <p> Centrum is {hotel.attributes.centrumdistance} km away.</p>
            <p> Bergen airport is {hotel.attributes.airportdistance} km away </p>
         

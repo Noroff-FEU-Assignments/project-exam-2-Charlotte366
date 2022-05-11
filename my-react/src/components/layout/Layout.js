@@ -11,13 +11,11 @@ import HotelSpecific  from "../hotelspecific/HotelSpecific";
 function Layout() {
     return (
      <Router>
-      <Navbar bg="dark" variant="dark" expand="lg">
-       <NavLink to="/" exact>
-        <Navbar.Brand>React App</Navbar.Brand>
-       </NavLink>
+         <Navbar classname="color-nav" variant="dark" expand="lg">
+ 
        <Navbar.Toggle aria-controls="basic-navbar-nav" />
        <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
+        <Nav className="ml-auto">
          <NavLink to="/" exact className="nav-link">
           Home
          </NavLink>
