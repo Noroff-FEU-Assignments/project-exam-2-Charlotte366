@@ -7,14 +7,13 @@ import Hotels from "../customerpages/hotels/Hotels";
 import Contact from "../customerpages/contact/Contact";
 import Admin  from "../adminpages/admin/Admin";
 import HotelSpecific  from "../hotelspecific/HotelSpecific";
-import logo from '../images/logo.png';
+
 
 function Layout() {
     return (
      <Router>
          <Navbar bg="dark" variant="dark" expand="lg">
-          <img src={logo}
-          />
+        
  
        <Navbar.Toggle aria-controls="basic-navbar-nav" />
        <Navbar.Collapse id="basic-navbar-nav">

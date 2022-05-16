@@ -26,14 +26,17 @@ export default App;
 */
 
 
-
+import "./App.scss";
+import "./sass/style.scss";
 import Layout from './components/layout/Layout';
-import logo from './images/logo.png';
-import './App.scss';
+//import logo from './images/logo.png';
+
 
 function App() {
   return <Layout />;
 }
 
 export default App;
+
+
 
