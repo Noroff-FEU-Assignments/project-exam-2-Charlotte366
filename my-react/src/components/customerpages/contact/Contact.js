@@ -1,4 +1,4 @@
-//import Heading from "../../layout/Heading";
+import Heading from "../../layout/Heading";
 import React from "react";
 import { useForm } from "react-hook-form";
 
@@ -7,8 +7,9 @@ import { useForm } from "react-hook-form";
 /*export default function Contact() {
     return (
         <>
-            <Heading title="Contact" />
-            <p>HOW CAN WE HELP?</p>
+            <Heading title="HOW CAN WE HELP" />
+            <p>If you have any questions, please feel free to use the contact form below. 
+We look forward to hearing from you</p>
         </>
     );
 }
@@ -26,6 +27,11 @@ function App() {
     console.log(errors);
 
     return (
+        <>
+        <Heading title="HOW CAN WE HELP?" />
+        <div className="heading-text"><p>If you have any questions, please feel free to use the contact form below.</p> 
+<p>We look forward to hearing from you</p></div>
+
         <div className="containerForm">
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div>
@@ -59,9 +65,15 @@ function App() {
                     {errors.message && <span>This field is required, minimum 10 characters</span>}</label></div>
 
 
-                <button>Send</button>
+                <button>SEND</button>
             </form>
         </div>
+
+
+
+
+</>
+
     );
 }
 

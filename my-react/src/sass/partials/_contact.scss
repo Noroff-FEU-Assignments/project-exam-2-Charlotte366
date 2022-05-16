@@ -1,4 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
 .containerForm {
-    background-color: blue;
- 
+    display: flex;
+    justify-content: center;
+    background-color:$colour-background-second;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    
+}
+
+input, textarea, select, button {
+    width: 100%;
+    margin-top: 7px;
+    padding: 5px;
+   
+}
+
+textarea {
+    padding: 20px;
+}
+
+button {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    background-color: $colour-button-contact;
+    border-radius: 7px;
+    border: 5px;
+    margin-bottom: 20px;
 }
