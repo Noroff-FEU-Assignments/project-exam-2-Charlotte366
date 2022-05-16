@@ -28,6 +28,8 @@ export default App;
 
 
 import Layout from './components/layout/Layout';
+import logo from './images/logo.png';
+import './App.scss';
 
 function App() {
   return <Layout />;
