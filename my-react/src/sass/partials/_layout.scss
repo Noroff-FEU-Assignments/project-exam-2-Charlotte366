@@ -1,8 +1,38 @@
 body {
     font-family: $font-secondary;
     background-color:$colour-background;
+}
+
+.logo {
+    background-color: $colour-nav
+}
+
+.logo img {
+    padding-top: 20px;
+}
+
+.search-bar {
+    width: 50%;
+    margin: auto;
+   
+}
+
+.navbar {
+    background-color: $colour-nav; 
+}
+
+.nav-link:hover {
+    color: $colour-nav;
+}
+
+.list-hotels {
+margin: 5px;
+
 
 }
+
+
+
 
 
 

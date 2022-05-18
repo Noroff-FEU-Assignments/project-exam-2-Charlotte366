@@ -1,0 +1,38 @@
+a:link { text-decoration: none; }
+a:link { color: black; }
+
+.card {
+    margin:20px;
+}
+
+
+.card-body {
+    display: flex;
+    flex-direction: row;
+   margin-bottom: 20px;
+   
+   
+    
+}
+
+.textone {
+    align-items: center;
+  
+    
+ 
+    
+}
+
+
+
+
+
+
+
+.btn {
+    border-radius: 30px;
+    background-color: $colour-nav;
+    font-family: $font-nav-button;
+    font-size: larger;
+  
+}

@@ -7,12 +7,40 @@ import Hotels from "../customerpages/hotels/Hotels";
 import Contact from "../customerpages/contact/Contact";
 import Admin  from "../adminpages/admin/Admin";
 import HotelSpecific  from "../hotelspecific/HotelSpecific";
+import Logo from "../../images/LogoHolidaze.png";
+import Form from "react-bootstrap/Form";
+import FormControl from "react-bootstrap/FormControl";
+import Button from "react-bootstrap/Button";
 
 
 function Layout() {
     return (
+      <>
+      
+      <div className="logo">
+      <div className="d-flex justify-content-center">
+<img src={Logo} alt="Logo" />
+</div>
+     
+
+
+<Form className="search-bar">
+        <FormControl
+          type="search"
+          placeholder="Search"
+          className="me-2"
+          aria-label="Search"
+        />
+        <Button variant="outline-success">Search</Button>
+      </Form>
+      </div>
+
+ 
+    
      <Router>
-         <Navbar bg="dark" variant="dark" expand="lg">
+    
+     
+         <Navbar fixed variant="dark" expand="lg">
         
  
        <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -33,6 +61,11 @@ function Layout() {
         </Nav>
        </Navbar.Collapse>
       </Navbar>
+     
+    
+  
+  
+     
       <Container>
       <Switch>
      <Route path="/" exact component={Home} />
@@ -43,9 +76,17 @@ function Layout() {
     </Switch>
     
       </Container>
+     
+     
      </Router>
+    
+
+    
+     </>
     );
+    
    }
+   
    
    export default Layout;
 
