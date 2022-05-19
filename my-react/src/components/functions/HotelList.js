@@ -51,41 +51,33 @@ function HotelList() {
        {hotel.map(function (hotel) {
    return (
     <div key={hotel.id}>
-        <Row xs={1} md={1} className="g-1">
-  {Array.from({ length: 1 }).map((_, idx) => (
+  <Row xs={1} md={1} className="g-1">
     <Col>
       <Card>
       <Link to={`hotelspecific/${hotel.id}`}>
-        <Card.Body >
+        <Card.Body>
         <Card.Img variant="left" src={hotel.attributes.mainimage.data.attributes.formats.small.url} width="300px" height="200px" />
         <div containerClass="textone">
         <Card.Title> 
                    <h2>{hotel.attributes.name}</h2>
                    </Card.Title>
           <Card.Text>
-           <p> Centrum is {hotel.attributes.centrumdistance} km away.</p>
-           <p> Bergen airport is {hotel.attributes.airportdistance} km away </p>
+           <p>Centrum is {hotel.attributes.centrumdistance} km away.</p>
+           <p>Bergen airport is {hotel.attributes.airportdistance} km away </p>
           </Card.Text>
         </div>
       
-<div containerClass="texttwo">
-<p> {hotel.attributes.price} kr </p>
-           <Button variant="primary">ORDER NOW</Button>{' '}
-
-</div>
-        
+        <div containerClass="texttwo">
+        <p> {hotel.attributes.price} kr </p>
+        <Button variant="primary">ORDER NOW</Button>{' '}
+        </div>
         
         </Card.Body>
         </Link>
       </Card>
     </Col>
-  ))}
-</Row>
- 
-
-
-  
-    </div>
+</Row>  
+ </div>
    );
 })}
    </div>

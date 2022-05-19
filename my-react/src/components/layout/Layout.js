@@ -6,7 +6,7 @@ import Home from "../customerpages/home/Home";
 import Hotels from "../customerpages/hotels/Hotels";
 import Contact from "../customerpages/contact/Contact";
 import Admin  from "../adminpages/admin/Admin";
-import HotelSpecific  from "../hotelspecific/HotelSpecific";
+import HotelSpecific  from "../customerpages/hotelspecific/HotelSpecific";
 import Logo from "../../images/LogoHolidaze.png";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
@@ -45,7 +45,7 @@ function Layout() {
  
        <Navbar.Toggle aria-controls="basic-navbar-nav" />
        <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
+        <Nav className="m-auto">
          <NavLink to="/" exact className="nav-link">
           Home
          </NavLink>
@@ -72,7 +72,7 @@ function Layout() {
      <Route path="/hotels" component={Hotels} />
      <Route path="/contact" component={Contact} />
      <Route path="/admin" component={Admin} />
-     <Route path="/hotelspecific" component={HotelSpecific} />
+     <Route path="/hotelspecific/:id" component={HotelSpecific} />
     </Switch>
     
       </Container>
