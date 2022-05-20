@@ -6,6 +6,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import "../../App.scss";
+import Button from "react-bootstrap/button";
 
 
 
@@ -71,6 +72,7 @@ function HotelDetails() {
                    </Card.Title>
           <Card.Text>
           Price for one night: {hoteldetails.attributes.price}
+          <Button variant="primary">ORDER NOW</Button>{' '}
           </Card.Text>
         </Card.Body>
       </Card>

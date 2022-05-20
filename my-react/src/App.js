@@ -29,7 +29,7 @@ export default App;
 import "./App.scss";
 import "./sass/style.scss";
 import Layout from './components/layout/Layout';
-//import logo from './images/logo.png';
+
 
 
 function App() {

@@ -11,6 +11,7 @@ export default function AdminLogin() {
 <div className="background-container">
 
 <img src={Background} alt="Bryggen Bergen" />
+
 </div>
 
    <Heading title="Admin" />
