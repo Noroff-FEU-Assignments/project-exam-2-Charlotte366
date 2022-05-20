@@ -5,15 +5,17 @@ import Container from "react-bootstrap/Container";
 import Home from "../customerpages/home/Home";
 import Hotels from "../customerpages/hotels/Hotels";
 import Contact from "../customerpages/contact/Contact";
-import Admin  from "../adminpages/admin/Admin";
+import Admin  from "../adminpages/Admin";
 import HotelSpecific  from "../customerpages/hotelspecific/HotelSpecific";
 import Logo from "../../images/LogoHolidaze.png";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
+import ReactDOM from 'react-dom'
 
 
 function Layout() {
+
     return (
       <>
       
@@ -21,7 +23,6 @@ function Layout() {
       <div className="d-flex justify-content-center">
 <img src={Logo} alt="Logo" />
 </div>
-     
 
 
 <Form className="search-bar">
@@ -30,7 +31,12 @@ function Layout() {
           placeholder="Search"
           className="me-2"
           aria-label="Search"
+          
         />
+      
+
+
+      
         <Button variant="outline-success">Search</Button>
       </Form>
       </div>
@@ -38,10 +44,8 @@ function Layout() {
  
     
      <Router>
-    
      
          <Navbar fixed variant="dark" expand="lg">
-        
  
        <Navbar.Toggle aria-controls="basic-navbar-nav" />
        <Navbar.Collapse id="basic-navbar-nav">

@@ -57,7 +57,7 @@ function HotelList() {
       <Link to={`hotelspecific/${hotel.id}`}>
         <Card.Body>
         <Card.Img variant="left" src={hotel.attributes.mainimage.data.attributes.formats.small.url} width="300px" height="200px" />
-        <div containerClass="textone">
+        <div className="textone">
         <Card.Title> 
                    <h2>{hotel.attributes.name}</h2>
                    </Card.Title>
@@ -67,7 +67,7 @@ function HotelList() {
           </Card.Text>
         </div>
       
-        <div containerClass="texttwo">
+        <div className="texttwo">
         <p> {hotel.attributes.price} kr </p>
         <Button variant="primary">ORDER NOW</Button>{' '}
         </div>

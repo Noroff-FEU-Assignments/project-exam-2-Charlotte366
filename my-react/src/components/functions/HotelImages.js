@@ -58,25 +58,23 @@ function HotelImages() {
  }
 
  return (
- <div className="list-images">
 
+<div className="try-img">
        {hotelimages.map(function (hotelimages) {
    return(
    <div key ={hotelimages.id}>
-<Col>
-      <Card>
-	   <Card.Body>
+
+      
+	 
         <Card.Img src={hotelimages.attributes.url} width="300px" height="200px" />
-		  <Card.Text>
+	
            {hotelimages.attributes.alternativeText}
-          </Card.Text>     
-        </Card.Body>
-      </Card>
-    </Col>  
-     </div>
+          </div>
+        
    )
    })}
   </div>
+
   );
   
   }

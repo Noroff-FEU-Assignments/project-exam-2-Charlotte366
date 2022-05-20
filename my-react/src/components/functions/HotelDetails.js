@@ -7,6 +7,7 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import "../../App.scss";
 import Button from "react-bootstrap/button";
+import HotelImages  from "../functions/HotelImages";
 
 
 
@@ -74,6 +75,7 @@ function HotelDetails() {
           Price for one night: {hoteldetails.attributes.price}
           <Button variant="primary">ORDER NOW</Button>{' '}
           </Card.Text>
+          <HotelImages />
         </Card.Body>
       </Card>
     </Col>
