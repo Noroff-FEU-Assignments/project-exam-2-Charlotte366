@@ -14,3 +14,32 @@ html {
   height: 250px;
 
 }
+
+.intro-container {
+  display: flex;
+  align-items: center;
+  background-color:$colour-nav;
+  height: 300px;
+  margin-bottom: 50px;
+}
+
+.vision-h2 {
+  font-family: $font-primary;
+  color:$colour-background-second;
+  padding: 30px;
+ 
+
+}
+
+.vision-text {
+  color:$colour-background-second;
+  margin-left: 30px;
+
+}
+
+.img-frontbottom img {
+  width: 350px;
+  height: 300px;
+
+}
+
