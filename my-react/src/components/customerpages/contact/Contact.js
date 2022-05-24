@@ -67,6 +67,17 @@ function AddContact() {
                     <input {...register("phone", { required: false, minLength: 4 })} />
                     {errors.email && <span>{errors.email.message}</span>}</label></div>
 
+                    
+                <div><label>Gender
+                    <select {...register("gender", { required: true })} >
+                        <option value="female">female</option>
+                        <option value="male">male</option>
+                        <option value="other">other</option>
+                        {errors.subject && <span>This field is required</span>}
+                    </select>
+                </label>
+                </div>
+
 
                 <div><label>Message Us
                     <textarea {...register("message", { required: true, minLength: 10 })} />
