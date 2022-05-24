@@ -1,6 +1,6 @@
 import React from "react";
 import Heading from "../../layout/Heading";
-import Hero from "../../../images/BLUBLUB.gif";
+import Hero from "../../../images/bryggen.gif";
 import ImgBed from "../../../images/viewbed.jpg";
 import ImgWater from "../../../images/clearwater.jpg";
 import ImgDrizzle from "../../../images/drizzle.jpg";
@@ -22,10 +22,10 @@ export default function Home() {
  <Heading title="Home" />
 
  <div className="d-flex flex-row img-front">
- <div className="p-2"><img src={ImgBed} alt="A bed with view from the hills"></img></div>
- <div className="p-2"><img src={ImgWater} alt="A bed with view from the hills"></img></div>
- <div className="p-2"><img src={ImgDrizzle} alt="A bed with view from the hills"></img></div>
- <div className="p-2"><img src={ImgCosy} alt="A bed with view from the hills"></img></div>
+ <div className="p-2"><img src={ImgBed} alt="A bed with a view from the hills"></img></div>
+ <div className="p-2"><img src={ImgWater} alt="Big house with crystal clear water infront"></img></div>
+ <div className="p-2"><img src={ImgDrizzle} alt="Hotel with a pool"></img></div>
+ <div className="p-2"><img src={ImgCosy} alt="Hotel with fireplace outside"></img></div>
  </div>
 
 
@@ -49,9 +49,9 @@ and we know Bergen  </p>
      </div>
 
      <div className="d-flex flex-row img-frontbottom">
- <div className="p-2"><img src={ImgbedHotel} alt="A bed with view from the hills"></img></div>
- <div className="p-2"><img src={ImgMagic} alt="A bed with view from the hills"></img></div>
- <div className="p-2"><img src={ImgHotel} alt="A bed with view from the hills"></img></div>
+ <div className="p-2"><img src={ImgbedHotel} alt="Hotel room and a big bed with zebra carpet"></img></div>
+ <div className="p-2"><img src={ImgMagic} alt="Girl looking outside her window from the hotelroom"></img></div>
+ <div className="p-2"><img src={ImgHotel} alt="Hotel room with a big bed"></img></div>
 
  </div>
 

@@ -1,6 +1,15 @@
+* {
+	box-sizing: border-box;
+}
+
+
+
 body {
     font-family: $font-secondary;
     background-color:$colour-background;
+    margin: 0 !important;
+    padding: 0 !important;
+    
 }
 
 .logo {

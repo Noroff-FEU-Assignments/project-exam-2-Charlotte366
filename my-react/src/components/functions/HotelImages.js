@@ -63,8 +63,6 @@ function HotelImages() {
        {hotelimages.map(function (hotelimages) {
    return(
    <div key ={hotelimages.id}>
-
-      
 	 
         <Card.Img src={hotelimages.attributes.url} width="300px" height="200px" />
 	
