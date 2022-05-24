@@ -3,9 +3,8 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import axios from "axios";
+import useAxios from "../../../hooks/useAxios";
 import FormError from "../../common/FormError";
-import {API_CONTACT} from "../../../constants/api"; 
 
 
 
@@ -14,22 +13,23 @@ function AddContact() {
 	const [serverError, setServerError] = useState(null);
 
 	const history = useHistory();
-   
+    const http = useAxios();
 
     const { register, handleSubmit, formState: { errors } } = useForm();
-    
-    
-    async function onSubmit(input) {
+
+  
+    async function onSubmit(data) {
 		setSubmitting(true);
 		setServerError(null);
 
-	
-		console.log(input);
+		data.status = "publish";
+
+		console.log(data);
 
 		try {
-			const response = await axios.post(API_CONTACT, { "data": input});
+			const response = await http.post("contacts", data);
 			console.log("response", response.data);
-			history.push("/contact");
+			history.push("/dashboard/posts");
 		} catch (error) {
 			console.log("error", error);
 			setServerError(error.toString());
@@ -49,11 +49,10 @@ function AddContact() {
             
             <form onSubmit={handleSubmit(onSubmit)}>
             {serverError && <FormError>{serverError}</FormError>}
-
 				<fieldset disabled={submitting}>
                 <div>
                     <label>Full Name
-                        <input {...register("name", { required: true, minLength: 3 })} />
+                        <input {...register("fullName", { required: true, minLength: 3 })} />
                         {errors.fullName && <span>This field is required, minimum 3 characters</span>}
                     </label>
                 </div>
@@ -63,9 +62,15 @@ function AddContact() {
                     <input {...register("email", { required: true, minLength: 4 })} />
                     {errors.email && <span>{errors.email.message}</span>}</label></div>
 
-                    <div><label>Phone
-                    <input {...register("phone", { required: false, minLength: 4 })} />
-                    {errors.email && <span>{errors.email.message}</span>}</label></div>
+                <div><label>Subject, *required
+                    <select {...register("subject", { required: true })} >
+                        <option value="female">female</option>
+                        <option value="male">male</option>
+                        <option value="other">other</option>
+                        {errors.subject && <span>This field is required</span>}
+                    </select>
+                </label>
+                </div>
 
 
                 <div><label>Message Us

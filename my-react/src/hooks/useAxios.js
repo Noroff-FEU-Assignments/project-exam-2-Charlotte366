@@ -4,7 +4,7 @@ import AuthContext from "../context/AuthContext";
 
 const url = process.env.REACT_APP_BASE_URL;
 
-export default function Axios() {
+export default function useAxios() {
 	const [auth] = useContext(AuthContext);
 
 	const apiClient = axios.create({

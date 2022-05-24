@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import FormError from "../../common/FormError";
-import {API_CONTACT} from "../../../constants/api"; 
+import {API_ENQUIRY} from "../../../constants/api"; 
 
 
 
