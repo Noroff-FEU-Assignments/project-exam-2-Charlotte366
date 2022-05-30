@@ -1,3 +1,4 @@
+/*
 import Heading from "../../layout/Heading";
 import React from "react";
 import { useForm } from "react-hook-form";
@@ -5,11 +6,12 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import FormError from "../../common/FormError";
+import ReactDatePicker from "react-datepicker";
 import {API_ENQUIRY} from "../../../constants/api"; 
 
 
 
-function AddContact() {
+function Booking() {
     const [submitting, setSubmitting] = useState(false);
 	const [serverError, setServerError] = useState(null);
 
@@ -63,13 +65,43 @@ function AddContact() {
                     <input {...register("email", { required: true, minLength: 4 })} />
                     {errors.email && <span>{errors.email.message}</span>}</label></div>
 
-                    <div><label>Phone
-                    <input {...register("phone", { required: false, minLength: 4 })} />
-                    {errors.email && <span>{errors.email.message}</span>}</label></div>
+                    <label>Date of arrival</label>
+          <Controller
+            control={control}
+            name="ReactDatepicker"
+            render={({ field }) => (
+              <ReactDatePicker
+                className="input"
+                placeholderText="Select date"
+                onChange={(e) => field.onChange(e)}
+                selected={field.value}
+              />
+            )}
+          />
+
+<label>Number of persons</label>
+          <Controller
+            render={({ field }) => (
+              <NumberFormat thousandSeparator {...field} />
+            )}
+            name="numberFormat"
+            className="input"
+            control={control}
+          />
+
+         <label>Number of days</label>
+          <Controller
+            render={({ field }) => (
+              <NumberFormat thousandSeparator {...field} />
+            )}
+            name="numberFormat"
+            className="input"
+            control={control}
+          />
 
 
-                <div><label>Message Us
-                    <textarea {...register("message", { required: true, minLength: 10 })} />
+                <div><label>Comments
+                    <textarea {...register("comments", { required: true, minLength: 10 })} />
                     {errors.message && <span>This field is required, minimum 10 characters</span>}</label></div>
 
 
@@ -86,4 +118,6 @@ function AddContact() {
     );
 }
 
-export default AddContact;
+export default Booking;
+
+*/

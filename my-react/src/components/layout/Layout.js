@@ -7,6 +7,7 @@ import Hotels from "../customerpages/hotels/Hotels";
 import Contact from "../customerpages/contact/Contact";
 import Admin  from "../adminpages/Admin";
 import HotelSpecific  from "../customerpages/hotelspecific/HotelSpecific";
+import Enquiry from "../customerpages/enquiry/Enquiry";
 import Logo from "../../images/LogoHolidaze.png";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
@@ -62,6 +63,7 @@ function Layout() {
          <NavLink to="/admin" className="nav-link">
           Admin
          </NavLink>
+    
         </Nav>
        </Navbar.Collapse>
       </Navbar>
@@ -77,6 +79,7 @@ function Layout() {
      <Route path="/contact" component={Contact} />
      <Route path="/admin" component={Admin} />
      <Route path="/hotelspecific/:id" component={HotelSpecific} />
+     <Route path="/enquiry/:id" component={Enquiry} />
     </Switch>
     
       </Container>

@@ -10,6 +10,7 @@ import AuthContext from "../../context/AuthContext";
 
 
 const url = BASE_URL + TOKEN_PATH;
+console.log(url);
 
 const schema = yup.object().shape({
 	username: yup.string().required("Please enter your username"),
@@ -28,14 +29,14 @@ export default function LoginForm() {
 
 	const [auth, setAuth] = useContext(AuthContext);
 
-	async function onSubmit(data) {
+	async function onSubmit(input) {
 		setSubmitting(true);
 		setLoginError(null);
 
-		// console.log(data);
+		console.log(input);
 
 		try {
-			const response = await axios.post(url, data);
+			const response = await axios.post(url, { "data": input});
 			console.log("response", response.data);
 			setAuth(response.data);
 			history.push("/dashboard");
@@ -58,7 +59,7 @@ export default function LoginForm() {
 					</div>
 
 					<div>
-						<input name="password" placeholder="Password" {...register('Overthehills1')} type="password" />
+						<input name="password" placeholder="Password" {...register('Password1234')} type="password" />
 					
 					</div>
 					<button>{submitting ? "Loggin in..." : "Login"}</button>
@@ -68,7 +69,7 @@ export default function LoginForm() {
 	);
 }
 
-
+//lærer sin kode for å logge inn
 
 /*import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -77,8 +78,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
 import FormError from "../common/FormError";
 import { BASE_URL, TOKEN_PATH } from "../../constants/api";
-
-
 
 const url = BASE_URL + TOKEN_PATH;
 
@@ -118,12 +117,12 @@ export default function LoginForm() {
 				{loginError && <FormError>{loginError}</FormError>}
 				<fieldset disabled={submitting}>
 					<div>
-						<input name="username" placeholder="Username" {...register('jc.oren@hotmail.com')} />
+						<input name="username" placeholder="Username" ref={register} />
 						{errors.username && <FormError>{errors.username.message}</FormError>}
 					</div>
 
 					<div>
-						<input name="password" placeholder="Password" {...register('Overthehills1')} type="password" />
+						<input name="password" placeholder="Password" ref={register} type="password" />
 						{errors.password && <FormError>{errors.password.message}</FormError>}
 					</div>
 					<button>{submitting ? "Loggin in..." : "Login"}</button>
@@ -134,3 +133,14 @@ export default function LoginForm() {
 }
 
 */
+
+
+
+
+
+
+
+
+
+
+

@@ -2,6 +2,7 @@ import React from "react";
 import Heading from "../layout/Heading";
 import Background from "../../images/background.jpg";
 import LoginForm from "./AdminLogin";
+//import LoggedIn from "./LoggedIn";
 
 
 export default function AdminLogin() {
@@ -15,6 +16,7 @@ export default function AdminLogin() {
 
    <Heading title="Admin" />
    <LoginForm />
+
   
   </>
  );
