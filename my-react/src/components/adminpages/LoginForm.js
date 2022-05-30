@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+/*import { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
@@ -69,9 +69,9 @@ export default function LoginForm() {
 	);
 }
 
-//lærer sin kode for å logge inn
+*/
 
-/*import { useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -85,6 +85,8 @@ const schema = yup.object().shape({
 	username: yup.string().required("Please enter your username"),
 	password: yup.string().required("Please enter your password"),
 });
+
+
 
 export default function LoginForm() {
 	const [submitting, setSubmitting] = useState(false);
@@ -117,12 +119,12 @@ export default function LoginForm() {
 				{loginError && <FormError>{loginError}</FormError>}
 				<fieldset disabled={submitting}>
 					<div>
-						<input name="username" placeholder="Username" ref={register} />
+						<input name="username" placeholder="Username" {...register('jc.oren@hotmail.com')} />
 						{errors.username && <FormError>{errors.username.message}</FormError>}
 					</div>
 
 					<div>
-						<input name="password" placeholder="Password" ref={register} type="password" />
+						<input name="password" placeholder="Password" {...register('Password1234')} type="password" />
 						{errors.password && <FormError>{errors.password.message}</FormError>}
 					</div>
 					<button>{submitting ? "Loggin in..." : "Login"}</button>
@@ -132,7 +134,7 @@ export default function LoginForm() {
 	);
 }
 
-*/
+
 
 
 
