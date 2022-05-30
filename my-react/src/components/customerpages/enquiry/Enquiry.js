@@ -121,3 +121,19 @@ function Booking() {
 export default Booking;
 
 */
+
+import Heading from "../../layout/Heading";
+
+
+
+
+export default function HotelEnquiry() {
+ return (
+  <>
+   <Heading title="Hotel Enquiry" />
+  
+ 
+
+  </>
+ );
+}

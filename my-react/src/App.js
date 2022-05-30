@@ -29,12 +29,18 @@ export default App;
 import "./App.scss";
 import "./sass/style.scss";
 import Layout from './components/layout/Layout';
-
+import { AuthProvider } from "./context/AuthContext";
 
 
 function App() {
-  return <Layout />;
-}
+  return (
+   <>
+  <AuthProvider>
+  <Layout />
+  </AuthProvider>
+  </> 
+)}
+
 
 export default App;
 

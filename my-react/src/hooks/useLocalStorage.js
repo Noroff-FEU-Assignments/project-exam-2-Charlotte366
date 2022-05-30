@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+
 export default function useLocalStorage(key, initialValue) {
 	// State to store our value
 	// Pass initial state function to useState so logic is only executed once
@@ -37,6 +38,9 @@ export default function useLocalStorage(key, initialValue) {
 
 	return [storedValue, setValue];
 }
+
+
+
 
 
 

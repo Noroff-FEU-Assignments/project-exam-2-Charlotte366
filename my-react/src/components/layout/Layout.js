@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { useHistory } from "react-router-dom";
+import AuthContext from "../../context/AuthContext";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
@@ -17,8 +20,18 @@ import Button from "react-bootstrap/Button";
 
 
 
-function Layout() {
 
+function Layout() {
+  const [auth, setAuth] = useContext(AuthContext);
+
+	const history = useHistory();
+
+
+	function logout() {
+		setAuth(null);
+		history.push("/home");
+	}
+  
     return (
       <>
       
@@ -45,7 +58,9 @@ function Layout() {
       </div>
 
  
-    
+  
+
+  
      <Router>
      
          <Navbar fixed variant="dark" expand="lg">
@@ -62,18 +77,24 @@ function Layout() {
          <NavLink to="/contact" className="nav-link">
           Contact
          </NavLink>
-         <NavLink to="/admin" className="nav-link">
+     
+			{auth ? (
+				<>
+			<NavLink to="/dashboard" className="nav-link">
+         Dashboard
+         </NavLink> <button onClick={logout}>Log out</button>
+				</>
+			) : (
+		    <NavLink to="/admin" exact className="nav-link">
           Admin
          </NavLink>
+			)}
     
         </Nav>
        </Navbar.Collapse>
       </Navbar>
      
     
-  
-  
-     
       <Container>
       <Switch>
      <Route path="/" exact component={Home} />
@@ -82,7 +103,7 @@ function Layout() {
      <Route path="/admin" component={Admin} />
      <Route path="/hotelspecific/:id" component={HotelSpecific} />
      <Route path="/enquiry/:id" component={Enquiry} />
-     <Route path="/Dashboard" exact component={Dashboard} />
+     <Route path="/dashboard" component={Dashboard} />
 
     </Switch>
     
@@ -90,6 +111,7 @@ function Layout() {
      
      
      </Router>
+  
     
 
     
@@ -97,6 +119,7 @@ function Layout() {
     );
     
    }
+
    
    
    export default Layout;

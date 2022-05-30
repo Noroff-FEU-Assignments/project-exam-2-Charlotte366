@@ -1,4 +1,4 @@
-/*import { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
@@ -8,12 +8,10 @@ import FormError from "../common/FormError";
 import { BASE_URL, TOKEN_PATH } from "../../constants/api";
 import AuthContext from "../../context/AuthContext";
 
-
 const url = BASE_URL + TOKEN_PATH;
-console.log(url);
 
 const schema = yup.object().shape({
-	username: yup.string().required("Please enter your username"),
+	identifier: yup.string().required("Please enter your username"),
 	password: yup.string().required("Please enter your password"),
 });
 
@@ -23,22 +21,26 @@ export default function LoginForm() {
 
 	const history = useHistory();
 
-	const { register, handleSubmit, errors } = useForm({
+	const {
+		register, 
+		handleSubmit,
+		formState:  { errors },
+	} = useForm({
 		resolver: yupResolver(schema),
 	});
 
 	const [auth, setAuth] = useContext(AuthContext);
 
-	async function onSubmit(input) {
+	async function onSubmit(data) {
 		setSubmitting(true);
 		setLoginError(null);
 
-		console.log(input);
+		console.log(data);
 
 		try {
-			const response = await axios.post(url, { "data": input});
+			const response = await axios.post(url, data);
 			console.log("response", response.data);
-			setAuth(response.data);
+			setAuth(response.data.jwt);
 			history.push("/dashboard");
 		} catch (error) {
 			console.log("error", error);
@@ -50,90 +52,30 @@ export default function LoginForm() {
 
 	return (
 		<>
-			<form onSubmit={handleSubmit(onSubmit)}>
-			
-				<fieldset disabled={submitting}>
-					<div>
-						<input name="username" placeholder="Username" {...register('jc.oren@hotmail.com')} />
-					
-					</div>
-
-					<div>
-						<input name="password" placeholder="Password" {...register('Password1234')} type="password" />
-					
-					</div>
-					<button>{submitting ? "Loggin in..." : "Login"}</button>
-				</fieldset>
-			</form>
-		</>
-	);
-}
-
-*/
-
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
-import axios from "axios";
-import FormError from "../common/FormError";
-import { BASE_URL, TOKEN_PATH } from "../../constants/api";
-
-const url = BASE_URL + TOKEN_PATH;
-
-const schema = yup.object().shape({
-	username: yup.string().required("Please enter your username"),
-	password: yup.string().required("Please enter your password"),
-});
-
-
-export default function LoginForm() {
-	const [submitting, setSubmitting] = useState(false);
-	const [loginError, setLoginError] = useState(null);
-
-	const { register, handleSubmit, errors } = useForm({
-		resolver: yupResolver(schema),
-	});
-
-	async function onSubmit(data) {
-		setSubmitting(true);
-		setLoginError(null);
-
-		console.log(data);
-
-		try {
-			const response = await axios.post(url, data);
-			console.log("response", response.data);
-		} catch (error) {
-			console.log("error", error);
-			setLoginError(error.toString());
-		} finally {
-			setSubmitting(false);
-		}
-	}
-
-	
-
-	return (
-		<>
+		<div className="form">
 			<form onSubmit={handleSubmit(onSubmit)}>
 				{loginError && <FormError>{loginError}</FormError>}
 				<fieldset disabled={submitting}>
 					<div>
-						<input name="username" placeholder="Username" {...register('jc.oren@hotmail.com')} />
+						<input name="identifier" placeholder="Username" {...register( `identifier` )} type="username" />
 						{errors.username && <FormError>{errors.username.message}</FormError>}
 					</div>
 
 					<div>
-						<input name="password" placeholder="Password" {...register('Password1234')} type="password" />
+						<input name="password" placeholder="Password" {...register( `password` )}type="password" />
 						{errors.password && <FormError>{errors.password.message}</FormError>}
 					</div>
 					<button>{submitting ? "Loggin in..." : "Login"}</button>
 				</fieldset>
 			</form>
+			</div>
 		</>
+		
 	);
 }
+
+
+
 
 
 
