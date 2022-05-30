@@ -1,8 +1,8 @@
 import React from "react";
 import Heading from "../layout/Heading";
 import Background from "../../images/background.jpg";
-import LoginForm from "./AdminLogin";
-//import LoggedIn from "./LoggedIn";
+import LoginForm from "./LoginForm";
+
 
 
 export default function AdminLogin() {

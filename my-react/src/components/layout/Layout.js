@@ -8,11 +8,13 @@ import Contact from "../customerpages/contact/Contact";
 import Admin  from "../adminpages/Admin";
 import HotelSpecific  from "../customerpages/hotelspecific/HotelSpecific";
 import Enquiry from "../customerpages/enquiry/Enquiry";
+import Dashboard  from "../adminpages/Dashboard";
 import Logo from "../../images/LogoHolidaze.png";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
-import ReactDOM from 'react-dom'
+
+
 
 
 function Layout() {
@@ -80,6 +82,8 @@ function Layout() {
      <Route path="/admin" component={Admin} />
      <Route path="/hotelspecific/:id" component={HotelSpecific} />
      <Route path="/enquiry/:id" component={Enquiry} />
+     <Route path="/Dashboard" exact component={Dashboard} />
+
     </Switch>
     
       </Container>
