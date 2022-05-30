@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { API_HOTELS } from "../../constants/api";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory,Link,Routes,Route,useNavigate } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -12,7 +12,6 @@ import Footer from "../layout/Footer";
 
 
 
-
 function HotelDetails() {
  const [hoteldetails, setHoteldetails] = useState([]);
  const [loading, setLoading] = useState(true);
@@ -21,6 +20,13 @@ function HotelDetails() {
  let history = useHistory();
 
  const { id } = useParams();
+
+ function OrderNow () {
+  const navigate = useNavigate();
+   navigate("/Enquiry/${HotelName}");
+ }
+
+ // const id = params.get("id");
 
  if (!id) {
  history.push("/");
@@ -61,6 +67,11 @@ function HotelDetails() {
   return <div>ERROR: An error occured</div>;
  }
 
+
+ //<Link to={`enquiry/${hotel.id}`}>
+ //<button onClick={logout}>Log out</button>
+const HotelName = hoteldetails.attributes.name;
+
  return (
 
         <>
@@ -71,8 +82,8 @@ function HotelDetails() {
       <Card>
         <Card.Body>
         <Card.Title> 
-                   <h2>{hoteldetails.attributes.name}</h2>
-                   <Button variant="primary">ORDER NOW</Button>{' '}
+                   <h2>{HotelName}</h2>
+                   <Button variant="primary" onClick={<Link to={`enquiry/${HotelName}`}></Link>}>ORDER NOW</Button>{' '}
                    </Card.Title>
           <Card.Text>
           Price for one night: {hoteldetails.attributes.price}
