@@ -106,9 +106,16 @@ function HotelEnquiry() {
                     {errors.email && <span>{errors.email.message}</span>}</label></div>
 
                     <div>
-                    <label>Number of persons
-                <input type="number" {...register("persons", { min: 1, max: 99 })} />
+                    <label>Number of persons *over 6 persons? Please contact us
+                <input type="number" {...register("number", { min: 1, max: 6 })} />
                 {errors.number && <span>This field is required, min:1/</span>}
+                    </label>
+                </div>
+
+                <div>
+                    <label>Number of days 
+                <input type="days" {...register("days", { min: 1, max: 30 })} />
+                {errors.number && <span>We are sorry, you cant book a room for more than 30days min:1/</span>}
                     </label>
                 </div>
 
