@@ -12,6 +12,9 @@ import Admin  from "../adminpages/Admin";
 import HotelSpecific  from "../customerpages/hotelspecific/HotelSpecific";
 import Enquiry from "../customerpages/enquiry/Enquiry";
 import Dashboard  from "../adminpages/Dashboard";
+import AdminAddHotel  from "../adminpages/AdminAddHotel";
+import AdminEnquery  from "../adminpages/AdminEnquery";
+import AdminContact  from "../adminpages/AdminContact";
 import Logo from "../../images/LogoHolidaze.png";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
@@ -29,7 +32,7 @@ function Layout() {
 
 	function logout() {
 		setAuth(null);
-		history.push("/home");
+		history.push ("/home");
 	}
   
     return (
@@ -104,6 +107,11 @@ function Layout() {
      <Route path="/hotelspecific/:id" component={HotelSpecific} />
      <Route path="/enquiry/:id" component={Enquiry} />
      <Route path="/dashboard" component={Dashboard} />
+     <Route path="/adminaddhotel" component={AdminAddHotel} />
+     <Route path="/adminenquery" component={AdminEnquery} />
+     <Route path="/admincontact" component={AdminContact} />
+
+    
 
     </Switch>
     

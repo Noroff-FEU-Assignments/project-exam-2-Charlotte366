@@ -58,12 +58,6 @@ and we know Bergen  </p>
  <Footer />
 
 
- 
-
-
- 
- 
-
 
  </>
   );
