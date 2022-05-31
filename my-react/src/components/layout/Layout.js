@@ -24,7 +24,7 @@ import Button from "react-bootstrap/Button";
 function Layout() {
   const [auth, setAuth] = useContext(AuthContext);
 
-	const history = useHistory();
+	let history = useHistory();
 
 
 	function logout() {

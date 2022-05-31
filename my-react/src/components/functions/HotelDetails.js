@@ -21,10 +21,8 @@ function HotelDetails() {
 
  const { id } = useParams();
 
- function OrderNow () {
-  const navigate = useNavigate();
-   navigate("/Enquiry/${HotelName}");
- }
+
+ 
 
  // const id = params.get("id");
 
@@ -68,9 +66,11 @@ function HotelDetails() {
  }
 
 
- //<Link to={`enquiry/${hotel.id}`}>
- //<button onClick={logout}>Log out</button>
 const HotelName = hoteldetails.attributes.name;
+
+function OrderNow() {
+  history.push(`/enquiry/${HotelName}`);
+}
 
  return (
 
@@ -83,7 +83,7 @@ const HotelName = hoteldetails.attributes.name;
         <Card.Body>
         <Card.Title> 
                    <h2>{HotelName}</h2>
-                   <Button variant="primary" onClick={<Link to={`enquiry/${HotelName}`}></Link>}>ORDER NOW</Button>{' '}
+                   <Button variant="primary" onClick={OrderNow}>ORDER NOW</Button>{' '}
                    </Card.Title>
           <Card.Text>
           Price for one night: {hoteldetails.attributes.price}
@@ -111,27 +111,3 @@ const HotelName = hoteldetails.attributes.name;
 
    export default HotelDetails;
 
-   /*<Card>
-   <Link to={`hotelspecific/${hotel.id}`}>
-     <Card.Body>
-     <Card.Img variant="left" src={hotel.attributes.mainimage.data.attributes.formats.small.url} width="300px" height="200px" />
-     <div className="textone">
-     <Card.Title> 
-                <h2>{hotel.attributes.name}</h2>
-                </Card.Title>
-       <Card.Text>
-        <p>Centrum is {hotel.attributes.centrumdistance} km away.</p>
-        <p>Bergen airport is {hotel.attributes.airportdistance} km away </p>
-       </Card.Text>
-     </div>
-   
-     <div className="texttwo">
-     <p> {hotel.attributes.price} kr </p>
-     <Button variant="primary">ORDER NOW</Button>{' '}
-     </div>
-     
-     </Card.Body>
-     </Link>
-   </Card>
-
-   */
