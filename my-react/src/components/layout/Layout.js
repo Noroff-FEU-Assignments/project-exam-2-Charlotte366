@@ -32,8 +32,10 @@ function Layout() {
 
 	function logout() {
 		setAuth(null);
-		history.push ("/home");
+		history.push ("/contact"); 
 	}
+
+  //href="/admincontact">
   
     return (
       <>

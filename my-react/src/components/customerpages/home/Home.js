@@ -9,24 +9,31 @@ import ImgbedHotel from "../../../images/1.jpg";
 import ImgMagic from "../../../images/2.jpg";
 import ImgHotel from "../../../images/3.jpg";
 import Footer from "../../layout/Footer";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
+
 
 
 export default function Home() {
    return  (
     <>
+  
     
      <div className="imgHeader">
      <img src={Hero} alt="Bryggen Bergen" />
  </div>
 
- <Heading title="Home" />
+ <Container fluid>
 
- <div className="d-flex flex-row img-front">
- <div className="p-2"><img src={ImgBed} alt="A bed with a view from the hills"></img></div>
- <div className="p-2"><img src={ImgWater} alt="Big house with crystal clear water infront"></img></div>
- <div className="p-2"><img src={ImgDrizzle} alt="Hotel with a pool"></img></div>
- <div className="p-2"><img src={ImgCosy} alt="Hotel with fireplace outside"></img></div>
- </div>
+ <Heading title="Home" />
+ 
+ <Row className="justify-content-center">
+ <div className="col-md-6 col-lg-3 img-front"><img src={ImgBed} alt="A bed with a view from the hills"></img></div>
+ <div className="col-md-6 col-lg-3 img-front"><img src={ImgWater} alt="Big house with crystal clear water infront"></img></div>
+ <div className="col-md-6 col-lg-3 img-front"><img src={ImgDrizzle} alt="Hotel with a pool"></img></div>
+ <div className="col-md-6 col-lg-3 img-front"><img src={ImgCosy} alt="Hotel with fireplace outside"></img></div>
+ </Row>
+ 
 
 
  <div className="intro-container">
@@ -48,12 +55,15 @@ and we know Bergen  </p>
      </div>
      </div>
 
-     <div className="d-flex flex-row img-frontbottom">
- <div className="p-2"><img src={ImgbedHotel} alt="Hotel room and a big bed with zebra carpet"></img></div>
- <div className="p-2"><img src={ImgMagic} alt="Girl looking outside her window from the hotelroom"></img></div>
- <div className="p-2"><img src={ImgHotel} alt="Hotel room with a big bed"></img></div>
 
- </div>
+<Row className="justify-content-center">
+ <div className="col-md-6 col-lg-3 img-frontbottom"><img src={ImgbedHotel} alt="Hotel room and a big bed with zebra carpet"></img></div>
+ <div className="col-md-6 col-lg-3 img-frontbottom"><img src={ImgMagic} alt="Girl looking outside her window from the hotelroom"></img></div>
+ <div className="col-md-6 col-lg-3 img-frontbottom"><img src={ImgHotel} alt="Hotel room with a big bed"></img></div>
+ </Row>
+ </Container>
+
+
 
  <Footer />
 

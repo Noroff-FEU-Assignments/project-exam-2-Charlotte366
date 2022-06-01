@@ -14,6 +14,7 @@ import Footer from "../layout/Footer";
 
 function HotelDetails() {
  const [hoteldetails, setHoteldetails] = useState([]);
+ const [hotel, setHotel] = useState([]);
  const [loading, setLoading] = useState(true);
  const [error, setError] = useState(null);
 
@@ -41,6 +42,7 @@ function HotelDetails() {
     if (response.ok) {
      const json = await response.json();
      console.log(json);
+     setHotel(json.data);
      setHoteldetails(json.data);
     } else {
      setError("An error occured");
@@ -75,26 +77,44 @@ function OrderNow() {
  return (
 
         <>
+      
         <Container>
-        <div className="HotelDetail">
-        <Row xs={1} md={2}>
+      
+      
+        
     <Col>
       <Card>
         <Card.Body>
-        <Card.Title> 
+        <div className="HotelDetail-up">
+        <Card.Title>
+          <div className="detail-up" >
                    <h2>{HotelName}</h2>
-                   <Button variant="primary" onClick={OrderNow}>ORDER NOW</Button>{' '}
-                   </Card.Title>
-          <Card.Text>
+                   <p>Centrum is {hotel.attributes.centrumdistance} km away.</p>
+           <p>Bergen airport is {hotel.attributes.airportdistance} km away </p>
           Price for one night: {hoteldetails.attributes.price}
-         
+          </div>
+
+          <div className="button-float">
+                   <Button variant="primary" onClick={OrderNow}>ORDER NOW</Button>{' '}
+                   </div>
+                   </Card.Title>
+                   </div>
+                   
+          <Card.Text>
+          {hoteldetails.attributes.description}
           </Card.Text>
-          <HotelImages />
+      
+         
         </Card.Body>
+        <HotelImages />
+       
+     
       </Card>
     </Col>
-</Row>
-        </div>
+
+   
+       
+    
         </Container>
 
         <div className="vision">
