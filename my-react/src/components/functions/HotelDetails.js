@@ -22,11 +22,6 @@ function HotelDetails() {
 
  const { id } = useParams();
 
-
- 
-
- // const id = params.get("id");
-
  if (!id) {
  history.push("/");
  }
@@ -69,6 +64,7 @@ function HotelDetails() {
 
 
 const HotelName = hoteldetails.attributes.name;
+
 
 function OrderNow() {
   history.push(`/enquiry/${HotelName}`);

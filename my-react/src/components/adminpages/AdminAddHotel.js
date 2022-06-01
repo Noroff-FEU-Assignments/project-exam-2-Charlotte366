@@ -1,12 +1,14 @@
 import Heading from "../layout/Heading";
+//import ListContact from "../functions/ListContact";
 
 
 
 
-export default function AdminAddHotel() {
+export default function AddHotel() {
  return (
   <>
-   <Heading title="Add Hotels" />
+   <Heading title="Add new hotels" />
+ 
 
  
   </>

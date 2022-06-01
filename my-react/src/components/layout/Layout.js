@@ -12,9 +12,11 @@ import Admin  from "../adminpages/Admin";
 import HotelSpecific  from "../customerpages/hotelspecific/HotelSpecific";
 import Enquiry from "../customerpages/enquiry/Enquiry";
 import Dashboard  from "../adminpages/Dashboard";
-import AdminAddHotel  from "../adminpages/AdminAddHotel";
+import AdminHotels  from "../adminpages/AdminHotels";
 import AdminEnquery  from "../adminpages/AdminEnquery";
 import AdminContact  from "../adminpages/AdminContact";
+import AdminEditHotel  from "../adminpages/AdminEditHotel";
+import AdminAddHotel  from "../adminpages/AdminAddHotel";
 import Logo from "../../images/LogoHolidaze.png";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
@@ -33,9 +35,10 @@ function Layout() {
 
 	function logout() {
 		setAuth(null);
-		history.push ("/contact"); 
 	}
 
+  //<Button variant="primary" size="lg" href="/adminaddhotel">See and adminstrate hotels</Button> 
+//history.push ("/contact"); 
   //href="/admincontact">
   
     return (
@@ -89,7 +92,7 @@ function Layout() {
 				<>
 			<NavLink to="/dashboard" className="nav-link">
          Dashboard
-         </NavLink> <button onClick={logout}>Log out</button>
+         </NavLink> <Button class="logout" onClick={logout}  href="/">Log out</Button>
 				</>
 			) : (
 		    <NavLink to="/admin" exact className="nav-link">
@@ -102,24 +105,27 @@ function Layout() {
       </Navbar>
      
     
-      <Container>
+    
       <Switch>
      <Route path="/" exact component={Home} />
      <Route path="/hotels" component={Hotels} />
      <Route path="/contact" component={Contact} />
      <Route path="/admin" component={Admin} />
      <Route path="/hotelspecific/:id" component={HotelSpecific} />
-     <Route path="/enquiry/:id" component={Enquiry} />
+     <Route path="/enquiry/:HotelName" component={Enquiry} />
      <Route path="/dashboard" component={Dashboard} />
-     <Route path="/adminaddhotel" component={AdminAddHotel} />
+     <Route path="/adminHotels" component={AdminHotels} />
      <Route path="/adminenquery" component={AdminEnquery} />
      <Route path="/admincontact" component={AdminContact} />
+     <Route path="/adminedithotel/:id" component={AdminEditHotel} />
+     <Route path="/adminaddhotel" component={AdminAddHotel} />
+
 
     
 
     </Switch>
     
-      </Container>
+
      
      
      </Router>

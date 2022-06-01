@@ -1,5 +1,5 @@
 import Heading from "../layout/Heading";
-import React from "react";
+//import React from "react";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
@@ -7,48 +7,12 @@ import axios from "axios";
 import FormError from "../common/FormError";
 //import ReactDatePicker from "react-datepicker";
 import {API_ENQUIRY} from "../../constants/api"; 
+import React from 'react';
+import background from "../../images/background.jpg";
 
 
 
-/*
-     <Controller
-            control={control}
-            name="ReactDatepicker"
-            render={({ field }) => (
-              <ReactDatePicker
-                className="input"
-                placeholderText="Select date"
-                onChange={(e) => field.onChange(e)}
-                selected={field.value}
-              />
-            )}
-          />
-
-<label>Number of persons</label>
-          <Controller
-            render={({ field }) => (
-              <NumberFormat thousandSeparator {...field} />
-            )}
-            name="numberFormat"
-            className="input"
-            control={control}
-          />
-
-           <label>Date of arrival</label>
-
-         <label>Number of days</label>
-          <Controller
-            render={({ field }) => (
-              <NumberFormat thousandSeparator {...field} />
-            )}
-            name="numberFormat"
-            className="input"
-            control={control}
-          />
-          */
-
-
-
+ 
 function HotelEnquiry() {
   const [submitting, setSubmitting] = useState(false);
 	const [serverError, setServerError] = useState(null);
@@ -76,18 +40,19 @@ function HotelEnquiry() {
 		} finally {
 			setSubmitting(false);
 		}
-	}
+	} 
 
-    
-
-
-    return (
+ return (
         <>
-        <Heading title="Please book your hotelroom here" />
-        <div className="heading-text"><p>If you have any questions, please feel free to use the contact form on contact page</p> 
-<p>We look forward to hearing from you</p></div>
+      
 
+        <Heading title="Please book your hotelroom here" />
+
+        <div style={{ backgroundImage: `url(${background})` }}>
         <div className="containerForm">
+       
+      
+ 
             
             <form onSubmit={handleSubmit(onSubmit)}>
             {serverError && <FormError>{serverError}</FormError>}
@@ -130,6 +95,8 @@ function HotelEnquiry() {
                     </fieldset>
             </form>
         </div>
+        </div>
+       
 
 
 

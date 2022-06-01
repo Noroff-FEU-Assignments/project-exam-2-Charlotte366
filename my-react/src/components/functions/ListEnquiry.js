@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { API_HOTELS_POPULATE } from "../../constants/api";
+import { API_ENQUIRY } from "../../constants/api";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -9,7 +9,7 @@ import "../../App.scss";
 import { Link } from "react-router-dom";
 
 
-function HotelList() {
+function ListEnquiry() {
  const [hotel, setHotel] = useState([]);
  const [loading, setLoading] = useState(true);
  const [error, setError] = useState(null);
@@ -18,7 +18,7 @@ function HotelList() {
  useEffect(function () {
   async function fetchData() {
    try {
-    const response = await fetch(API_HOTELS_POPULATE);
+    const response = await fetch(API_ENQUIRY);
 
     if (response.ok) {
      const json = await response.json();
@@ -47,42 +47,32 @@ function HotelList() {
  return (
  
    
-    <div className="list-hotels">
+    <div className="list-enquiry">
 
-       {hotel.map(function (hotel) {
+       {hotel.map(function (enquiry) {
    return (
 
-    <Container>
-     
-    <div key={hotel.id}>
+  <div key={enquiry.id}>
   <Row>
     <Col>
       <Card>
-      <Link to={`hotelspecific/${hotel.id}`}>
         <Card.Body>
-        <Card.Img variant="left" src={hotel.attributes.mainimage.data.attributes.formats.small.url} width="300px" height="200px" />
-        <div className="textone">
-        <Card.Title> 
-                   <h2>{hotel.attributes.name}</h2>
-                   </Card.Title>
+       
           <Card.Text>
-           <p>Centrum is {hotel.attributes.centrumdistance} km away.</p>
-           <p>Bergen airport is {hotel.attributes.airportdistance} km away </p>
+          <p>Hotel Name: </p>
+          <p>Customer Name:{enquiry.attributes.name}</p>
+           <p> Customer Email:{enquiry.attributes.email}</p>
+           <p> Comments:{enquiry.attributes.comments}</p>
+            <p> Number of poeple:{enquiry.attributes.number}</p>
+            <p> Number of days:{enquiry.attributes.days}</p>
+            <p> Time sent in:{enquiry.attributes.createdAt}</p>
           </Card.Text>
-        </div>
-      
-        <div className="texttwo">
-        <p> {hotel.attributes.price} kr </p>
-        <Button variant="primary">ORDER NOW</Button>{' '}
-        </div>
-        
         </Card.Body>
-        </Link>
+    
       </Card>
     </Col>
 </Row>  
  </div>
- </Container>
    );
 })}
    </div>
@@ -92,4 +82,4 @@ function HotelList() {
 }
 
 
-export default HotelList;
+export default ListEnquiry;

@@ -6,7 +6,7 @@ import HotelDetails from "../../functions/HotelDetails";
 export default function HotelSpecific() {
  return (
   <>
-   <Heading title="Hotel Specific" />
+   <Heading title= "" />
    <HotelDetails />
  
 

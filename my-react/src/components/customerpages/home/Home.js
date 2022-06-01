@@ -51,11 +51,11 @@ accommodation you book
      <div className="col-md-6 col-lg-3 vision-text">
        <p>Free cancellation</p>
      </div>
-     <div className="vision-text">
+     <div className="col-md-6 col-lg-3 vision-text">
        <p>We are a local tourism agency
-and we know Bergen  </p>
-   
-     </div>
+and we know Bergen
+       </p>
+      </div>
      </Row>
      </Container>
 
