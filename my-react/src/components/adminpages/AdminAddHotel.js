@@ -1,14 +1,14 @@
 import Heading from "../layout/Heading";
-//import ListContact from "../functions/ListContact";
+import AddHotel from "../functions/AddHotel";
 
 
 
 
-export default function AddHotel() {
+export default function ListMedia() {
  return (
   <>
    <Heading title="Add new hotels" />
- 
+   <AddHotel/>
 
  
   </>

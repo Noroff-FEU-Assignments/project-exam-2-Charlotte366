@@ -1,17 +1,16 @@
-import Heading from "../layout/Heading";
+
+import React from "react";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import FormError from "../common/FormError";
-//import ReactDatePicker from "react-datepicker";
-import {API_ENQUIRY} from "../../constants/api"; 
-import React from 'react';
-import background from "../../images/background.jpg";
+import {API_CONTACT} from "../../constants/api"; 
 
- 
-function HotelEnquiry() {
-  const [submitting, setSubmitting] = useState(false);
+
+
+function AddContact() {
+    const [submitting, setSubmitting] = useState(false);
 	const [serverError, setServerError] = useState(null);
 
 	const history = useHistory();
@@ -28,26 +27,24 @@ function HotelEnquiry() {
 		console.log(input);
 
 		try {
-			const response = await axios.post(API_ENQUIRY, { "data": input});
+			const response = await axios.post(API_CONTACT, { "data": input});
 			console.log("response", response.data);
-			history.push("/");
+			history.push("/contact");
 		} catch (error) {
 			console.log("error", error);
 			setServerError(error.toString());
 		} finally {
 			setSubmitting(false);
 		}
-	} 
+	}
 
- return (
+
+    return (
         <>
-      
+        <div className="heading-text"><p>If you have any questions, please feel free to use the contact form below.</p> 
+<p>We look forward to hearing from you</p></div>
 
-        <Heading title="Please ask to book your hotelroom here" />
-
-        <div style={{ backgroundImage: `url(${background})` }}>
         <div className="containerForm">
-       
             
             <form onSubmit={handleSubmit(onSubmit)}>
             {serverError && <FormError>{serverError}</FormError>}
@@ -65,24 +62,24 @@ function HotelEnquiry() {
                     <input {...register("email", { required: true, minLength: 4 })} />
                     {errors.email && <span>{errors.email.message}</span>}</label></div>
 
-                    <div>
-                    <label>Number of persons *over 6 persons? Please contact us
-                <input type="number" {...register("number", { min: 1, max: 6 })} />
-                {errors.number && <span>This field is required, min:1/</span>}
-                    </label>
+                    <div><label>Phone
+                    <input {...register("phone", { required: false, minLength: 4 })} />
+                    {errors.email && <span>{errors.email.message}</span>}</label></div>
+
+                    
+                <div><label>Gender
+                    <select {...register("gender", { required: true })} >
+                        <option value="female">female</option>
+                        <option value="male">male</option>
+                        <option value="other">other</option>
+                        {errors.subject && <span>This field is required</span>}
+                    </select>
+                </label>
                 </div>
 
-                <div>
-                    <label>Number of days 
-                <input type="days" {...register("days", { min: 1, max: 30 })} />
-                {errors.number && <span>We are sorry, you cant book a room for more than 30days min:1/</span>}
-                    </label>
-                </div>
 
-                   
-    
-                <div><label>Please add your wanted dates, and other comments regarding your stay
-                    <textarea {...register("comments", { required: true, minLength: 10 })} />
+                <div><label>Message Us
+                    <textarea {...register("message", { required: true, minLength: 10 })} />
                     {errors.message && <span>This field is required, minimum 10 characters</span>}</label></div>
 
 
@@ -90,11 +87,13 @@ function HotelEnquiry() {
                     </fieldset>
             </form>
         </div>
-        </div>
+
+
+
 
 </>
 
     );
 }
 
-export default HotelEnquiry;
+export default AddContact;
