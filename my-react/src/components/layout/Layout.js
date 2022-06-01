@@ -24,6 +24,7 @@ import Button from "react-bootstrap/Button";
 
 
 
+
 function Layout() {
   const [auth, setAuth] = useContext(AuthContext);
 
@@ -39,11 +40,13 @@ function Layout() {
   
     return (
       <>
-      
+   
       <div className="logo">
-      <div className="d-flex justify-content-center">
+      <div className="d-flex justify-content-center logo">
 <img src={Logo} alt="Logo" />
+
 </div>
+
 
 
 <Form className="search-bar">
@@ -55,12 +58,11 @@ function Layout() {
           
         />
       
-
-
-      
+  
         <Button variant="outline-success">Search</Button>
       </Form>
       </div>
+     
 
  
   

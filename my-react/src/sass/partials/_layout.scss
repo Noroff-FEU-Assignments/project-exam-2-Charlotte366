@@ -1,15 +1,19 @@
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    
+}
+
+
 * {
 	box-sizing: border-box;
 }
 
 
-
-
 body {
     font-family: $font-secondary;
-    background-color:$colour-background;
-    margin: 0 !important;
-    padding: 0 !important;
+ 
+
     
 }
 
@@ -18,7 +22,10 @@ body {
 }
 
 .logo img {
+ 
+    height: 80px;
     padding-top: 20px;
+
  
 }
 
@@ -42,6 +49,20 @@ body {
 margin: 5px;
 
 }
+
+.contact-info {
+    margin-top: 20px;
+}
+
+
+
+.contact-info {
+    padding-top:30px;
+    padding-bottom: 30px;
+    background-color:$colour-background;
+}
+
+
 
 
 

@@ -50,6 +50,7 @@ function HotelList() {
 
        {hotel.map(function (hotel) {
    return (
+     
     <div key={hotel.id}>
   <Row xs={1} md={1} className="g-1">
     <Col>

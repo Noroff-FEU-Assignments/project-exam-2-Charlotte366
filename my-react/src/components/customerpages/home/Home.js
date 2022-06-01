@@ -23,8 +23,8 @@ export default function Home() {
      <img src={Hero} alt="Bryggen Bergen" />
  </div>
 
- <Container fluid>
 
+ <Container fluid className="index-body">
  <Heading title="Home" />
  
  <Row className="justify-content-center">
@@ -33,29 +33,35 @@ export default function Home() {
  <div className="col-md-6 col-lg-3 img-front"><img src={ImgDrizzle} alt="Hotel with a pool"></img></div>
  <div className="col-md-6 col-lg-3 img-front"><img src={ImgCosy} alt="Hotel with fireplace outside"></img></div>
  </Row>
+ </Container>
  
 
 
- <div className="intro-container">
-   <div className="vision-h2">
+ <Container fluid className="intro-container">
+ <Row className="align-items-center">
+ <div className="col-md-6 col-lg-3 vision-h2">
    <h2>Why Order with Holidaze</h2>
      </div> 
-     <div className="vision-text">
+     <div className="col-md-6 col-lg-3 vision-text">
        <p>
        Get accommodation for every 20th
 accommodation you book
        </p>
      </div>
-     <div className="vision-text">
+     <div className="col-md-6 col-lg-3 vision-text">
        <p>Free cancellation</p>
      </div>
      <div className="vision-text">
        <p>We are a local tourism agency
 and we know Bergen  </p>
+   
      </div>
-     </div>
+     </Row>
+     </Container>
 
+  
 
+<Container>
 <Row className="justify-content-center">
  <div className="col-md-6 col-lg-3 img-frontbottom"><img src={ImgbedHotel} alt="Hotel room and a big bed with zebra carpet"></img></div>
  <div className="col-md-6 col-lg-3 img-frontbottom"><img src={ImgMagic} alt="Girl looking outside her window from the hotelroom"></img></div>
