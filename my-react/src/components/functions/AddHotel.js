@@ -3,10 +3,9 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import axios from "axios";
 import FormError from "../common/FormError";
 import {API_HOTELS_POPULATE} from "../../constants/api";
-
+import useAxios from "../../hooks/useAxios";
 
 
 function AddHotel() {
@@ -14,11 +13,11 @@ function AddHotel() {
 	const [serverError, setServerError] = useState(null);
 
 	const history = useHistory();
+    const http = useAxios();
    
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     
-
 
     async function onSubmit(input) {
 		setSubmitting(true);
@@ -28,7 +27,7 @@ function AddHotel() {
 		console.log(input);
 
 		try {
-			const response = await axios.post(API_HOTELS_POPULATE, { "data": input});
+			const response = await http.post(API_HOTELS_POPULATE, {"data": input});
 			console.log("response", response.data);
 			history.push("/contact");
 		} catch (error) {
@@ -53,7 +52,7 @@ function AddHotel() {
                 <div>
                     <label>Name of the hotel
                         <input {...register("name", { required: true, minLength: 3 })} />
-                        {errors.fullName && <span>This field is required, minimum 3 characters</span>}
+                        {errors.name && <span>This field is required, minimum 3 characters</span>}
                     </label>
                 </div>
 
