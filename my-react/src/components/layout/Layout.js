@@ -38,10 +38,8 @@ function Layout() {
 		setAuth(null);
 	}
 
-  //<Button variant="primary" size="lg" href="/adminaddhotel">See and adminstrate hotels</Button> 
-//history.push ("/contact"); 
-  //href="/admincontact">
-  
+
+
     return (
       <>
    
