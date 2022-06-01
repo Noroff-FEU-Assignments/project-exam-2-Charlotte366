@@ -1,3 +1,13 @@
+LOGIN DETAILS TO ADMIN REACT
+
+USERNAME: jc.oren@hotmail.com
+password:Password1234
+
+LOGIN DETAILS STRAPI
+
+jc.oren@hotmail.com
+password:Overthehills1
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
