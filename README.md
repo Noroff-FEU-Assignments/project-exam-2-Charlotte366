@@ -1,6 +1,6 @@
 # Project Exam 2
 
-![image](https://user-images.githubusercontent.com/52622303/164316813-4b12d99f-aeb7-4069-85cf-e72b3a50ac99.png)
+![image](https://github.com/Noroff-FEU-Assignments/project-exam-2-Charlotte366/blob/main/ProjectExam2.png)
 
 In this assignment we were to create a website for a fictional company called "Holidaze"
 Holidaze is a local tourism agency that knows how to find the best booking opportunities in Bergen and the surrounding area
