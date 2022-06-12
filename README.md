@@ -63,7 +63,7 @@ npm run start
 ## Contact
 
 
-[My LinkedIn page](www.linkedin.com)
+[My LinkedIn page](www.linkedin.com/in/charlotte-soltvedt-677ab5241)
 
 
 ## Acknowledgments
