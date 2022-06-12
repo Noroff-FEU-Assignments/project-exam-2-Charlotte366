@@ -42,7 +42,7 @@ The admin section consists of pages such as:
 1. Clone the repo:
 
 ```bash
-git clone https://github.com/Noroff-FEU-Assignments/project-exam-2-Charlotte366
+git clone github.com/Noroff-FEU-Assignments/project-exam-2-Charlotte366
 ```
 
 2. Install the dependencies:
